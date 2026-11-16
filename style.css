@@ -1,0 +1,100 @@
+/* Warna */
+:root {
+  --biru: #034694;
+  --biru-tua: #001f5c;
+  --kuning: #fdd000;
+}
+body { background: #fff; color: #1c2434; }
+
+.text-biru { color: var(--biru) !important; }
+.text-kuning { color: var(--kuning) !important; }
+.bg-biru { background: var(--biru) !important; }
+.bg-kuning { background: var(--kuning) !important; }
+
+.topbar { background: var(--biru-tua); border-bottom: 4px solid var(--kuning); }
+
+/* Sidebar */
+.sidebar {
+  background:
+    linear-gradient(var(--kuning), var(--kuning)) right 0 top 0 / 2px 100% no-repeat,
+    linear-gradient(to bottom, var(--biru), rgba(3,70,148,0)) bottom / 100% 40% no-repeat,
+    repeating-linear-gradient(60deg, rgba(255,255,255,.06) 0 1px, transparent 1px 18px) bottom / 100% 40% no-repeat,
+    repeating-linear-gradient(-60deg, rgba(255,255,255,.06) 0 1px, transparent 1px 18px) bottom / 100% 40% no-repeat,
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 5px),
+    var(--biru) !important;
+}
+.sidebar { min-height: calc(100vh - 60px); flex: 0 0 230px; width: 230px; }
+@media (min-width: 992px) {
+  .app { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+  .app .isi { flex: 1; min-height: 0; }
+  .app main { overflow-y: auto; }
+  .sidebar { min-height: 0; overflow-y: auto; transition: margin-left .25s ease; }
+  .sidebar-tutup .sidebar { margin-left: -230px; }
+}
+.sidebar .nav-link { white-space: nowrap; color: #dbe6ff; border-radius: 8px; margin-bottom: 4px; }
+.sidebar .nav-link:hover { background: rgba(255,255,255,.1); color: #fff; }
+.sidebar .nav-link.active { background: var(--kuning); color: var(--biru-tua); font-weight: 600; }
+@media (max-width: 991.98px) { .sidebar { min-height: 100vh; } }
+
+/* Konten */
+main {
+  min-width: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cpath id='c' d='M18 100a82 82 0 1 1 164 0a82 82 0 1 1-164 0'/%3E%3C/defs%3E%3Cg fill='none' stroke='%231c2434' stroke-opacity='.05' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='95'/%3E%3Ccircle cx='100' cy='100' r='70'/%3E%3C/g%3E%3Ctext font-family='Georgia,serif' font-size='11' fill='%231c2434' fill-opacity='.05'%3E%3CtextPath href='%23c' textLength='505' lengthAdjust='spacing'%3ESISTEM INFORMASI KEPEGAWAIAN %E2%80%A2 SIMPEG %E2%80%A2%3C/textPath%3E%3C/text%3E%3Cg transform='translate(56 54) scale(2.75)' fill='%231c2434'%3E%3Cpath d='M16 1 3 6v9c0 8 5.6 13.6 13 16 7.4-2.4 13-8 13-16V6z' fill-opacity='.03'/%3E%3Ccircle cx='16' cy='12' r='4' fill-opacity='.04'/%3E%3Cpath d='M8.5 23.5c0-4.2 3.4-6.5 7.5-6.5s7.5 2.3 7.5 6.5z' fill-opacity='.04'/%3E%3C/g%3E%3C/svg%3E") center / min(85vh, 90%) no-repeat,
+    linear-gradient(to bottom, #fff, rgba(255,255,255,0)) bottom / 100% 30% no-repeat,
+    repeating-linear-gradient(60deg, rgba(28,36,52,.035) 0 1px, transparent 1px 22px) bottom / 100% 30% no-repeat,
+    repeating-linear-gradient(-60deg, rgba(28,36,52,.035) 0 1px, transparent 1px 22px) bottom / 100% 30% no-repeat,
+    repeating-linear-gradient(90deg, rgba(28,36,52,.018) 0 1px, transparent 1px 5px),
+    #fff;
+}
+.judul-halaman { color: var(--biru); font-weight: 700; }
+.judul-halaman::after { content: ""; display: block; width: 48px; height: 4px; margin-top: 6px; background: var(--kuning); border-radius: 2px; }
+
+.card { border: 1px solid #e3e9f5; border-radius: 12px; box-shadow: 0 2px 8px rgba(3,70,148,.06); }
+.card-header { background: #fff; border-bottom: 2px solid var(--kuning); font-weight: 600; color: var(--biru); }
+
+.btn-primary { background: var(--biru); border-color: var(--biru); }
+.btn-primary:hover, .btn-primary:focus { background: var(--biru-tua); border-color: var(--biru-tua); }
+.btn-warning { background: var(--kuning); border-color: var(--kuning); color: var(--biru-tua); }
+
+.table thead th { background: var(--biru); color: #fff; font-weight: 500; }
+tr.inaktif td { color: #9aa3b5; }
+
+.stat .ikon { width: 52px; height: 52px; border-radius: 12px; background: var(--kuning); display: grid; place-items: center; }
+.stat i { font-size: 1.5rem; color: var(--biru); }
+
+/* Login */
+.login-bg {
+  position: relative; overflow: hidden; min-height: 100vh;
+  background:
+    linear-gradient(var(--kuning), var(--kuning)) left 6% top 0 / 2px 100% no-repeat,
+    linear-gradient(var(--kuning), var(--kuning)) right 6% top 0 / 2px 100% no-repeat,
+    repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 5px),
+    linear-gradient(160deg, #1d4ed8, var(--biru) 70%, var(--biru-tua));
+}
+/* Watermark logo */
+.login-bg::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 110vmin; height: 110vmin; transform: translate(-50%, -50%);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cpath id='c' d='M18 100a82 82 0 1 1 164 0a82 82 0 1 1-164 0'/%3E%3C/defs%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.09' stroke-width='1.5'%3E%3Ccircle cx='100' cy='100' r='95'/%3E%3Ccircle cx='100' cy='100' r='70'/%3E%3C/g%3E%3Ctext font-family='Georgia,serif' font-size='11' fill='%23fff' fill-opacity='.09'%3E%3CtextPath href='%23c' textLength='505' lengthAdjust='spacing'%3ESISTEM INFORMASI KEPEGAWAIAN %E2%80%A2 SIMPEG %E2%80%A2%3C/textPath%3E%3C/text%3E%3Cg transform='translate(56 54) scale(2.75)' fill='%23fff'%3E%3Cpath d='M16 1 3 6v9c0 8 5.6 13.6 13 16 7.4-2.4 13-8 13-16V6z' fill-opacity='.07'/%3E%3Ccircle cx='16' cy='12' r='4' fill-opacity='.1'/%3E%3Cpath d='M8.5 23.5c0-4.2 3.4-6.5 7.5-6.5s7.5 2.3 7.5 6.5z' fill-opacity='.1'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+/* Pola bawah */
+.login-bg::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(60deg, rgba(255,255,255,.05) 0 2px, transparent 2px 22px),
+    repeating-linear-gradient(-60deg, rgba(255,255,255,.05) 0 2px, transparent 2px 22px);
+  -webkit-mask-image: linear-gradient(to top, #000, transparent 35%);
+  mask-image: linear-gradient(to top, #000, transparent 35%);
+}
+.login-card { position: relative; z-index: 1; overflow: hidden; }
+.login-card::before { content: ""; display: block; height: 6px; background: var(--kuning); }
+
+/* Grafik */
+.chart-box { position: relative; height: 280px; }
+
+/* Footer */
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e3e9f5; color: #6c757d; font-size: .85rem; text-align: center; }
+
+/* Logo */
+.logo { width: 28px; height: 28px; vertical-align: -6px; }
+.logo-lg { width: 64px; height: 64px; }
